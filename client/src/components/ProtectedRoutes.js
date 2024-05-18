@@ -21,7 +21,7 @@ export default function ProtectedRoutes({ children }) {
       );
       dispatch(hideLoading());
       if (res.data.success) {
-        dispatch(setUser);
+        dispatch(setUser(res.data.data));
       } else {
         localStorage.clear();
         <Navigate to="/login" />;
