@@ -6,8 +6,12 @@ import Spinner from "./components/Spinner";
 import { useSelector } from "react-redux";
 import ProtectedRoutes from "./components/ProtectedRoutes";
 import PublicRoute from "./components/PublicRoute";
+import Users from "./pages/admin/Users";
+import Doctors from "./pages/admin/Doctors";
 import ApplyDoctor from "./pages/ApplyDoctor";
+import Profile from "./pages/doctor/Profile";
 import NotificationPage from "./pages/NotificationPage";
+import BookingPage from "./pages/BookingPage";
 function App() {
   const { loading } = useSelector((state) => state.alerts);
 
@@ -32,6 +36,39 @@ function App() {
               element={
                 <ProtectedRoutes>
                   <ApplyDoctor />
+                </ProtectedRoutes>
+              }
+            />
+
+            <Route
+              path="/admin/users"
+              element={
+                <ProtectedRoutes>
+                  <Users />
+                </ProtectedRoutes>
+              }
+            />
+            <Route
+              path="/admin/doctors"
+              element={
+                <ProtectedRoutes>
+                  <Doctors />
+                </ProtectedRoutes>
+              }
+            />
+            <Route
+              path="/doctor/profile/:id"
+              element={
+                <ProtectedRoutes>
+                  <Profile />
+                </ProtectedRoutes>
+              }
+            />
+            <Route
+              path="/doctor/book-appointment/:doctorId"
+              element={
+                <ProtectedRoutes>
+                  <BookingPage />
                 </ProtectedRoutes>
               }
             />

@@ -84,7 +84,11 @@ const NotificationPage = () => {
         </Tabs.TabPane>
         <Tabs.TabPane tab="Read" key={1}>
           <div className="d-flex justify-content-end">
-            <h6 className="p-2" onClick={handleDeleteAllRead}>
+            <h6
+              className="p-2 text-primary"
+              style={{ cursor: "pointer" }}
+              onClick={handleDeleteAllRead}
+            >
               Delete All Read
             </h6>
           </div>
